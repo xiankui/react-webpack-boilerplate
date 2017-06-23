@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import logo from './logo.svg';
-import './app.scss'
+import './index.scss'
 
 class App extends Component {
 	constructor(props) {
@@ -13,6 +13,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="app-container">
+				<div className="app-banner">banner</div>
 				<h1>react with webpack</h1>
 				<img src={logo} alt="logo" />
 			</div>

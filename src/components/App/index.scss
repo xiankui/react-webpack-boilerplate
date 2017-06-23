@@ -4,8 +4,6 @@ $prefix: app;
 
 body {
 	margin: 0;
-	background-image: url(bg.gif); /* static/media/[name].[ext] */
-	background-repeat: no-repeat;
 }
 
 .#{$prefix}-container {
@@ -22,4 +20,13 @@ body {
 		max-width: 320px;
 		height: auto;
 	}
+}
+
+.#{$prefix}-banner {
+	height: 50px;
+	width: 100%;
+	background-image: url(bg.gif);
+	background-repeat: no-repeat;
+	background-size: cover;
+	text-indent: 9999px;
 }
