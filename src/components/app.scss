@@ -1,0 +1,25 @@
+$huge-fs: 44px;
+
+$prefix: app;
+
+body {
+	margin: 0;
+	background-image: url(bg.gif); /* static/media/[name].[ext] */
+	background-repeat: no-repeat;
+}
+
+.#{$prefix}-container {
+	text-align: center;
+	
+	h1 {
+		font-size: $huge-fs;
+		color: lightcoral;
+		display: flex;
+		justify-content: center;
+	}
+
+	img {
+		max-width: 320px;
+		height: auto;
+	}
+}
