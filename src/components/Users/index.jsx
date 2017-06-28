@@ -13,6 +13,8 @@ class Users extends Component {
 	  super(props);
 	
 	  this.state = {};
+
+	  console.log('pathname /users was matched')
 	}
 
 	render() {

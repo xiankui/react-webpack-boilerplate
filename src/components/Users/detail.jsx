@@ -7,13 +7,14 @@ class Detail extends Component {
 	
 	  this.state = {};
 
+	  console.log('pathname /users/:name was matched')
 	  console.log(this.props)
 	}
 
 	render() {
 		let name = this.props.match.params.name;
 		return (
-			<h2>hello {name}, i am {this.props.author}</h2>
+			<h2>hi, my name is {name}, my age is {this.props.age}</h2>
 		)
 	}
 }
@@ -27,7 +28,7 @@ Detail.propTypes = {
 }
 
 Detail.defaultProps = {
-	author: 'kevin'
+	age: '20'
 }
 
 export default Detail;
