@@ -6,7 +6,12 @@ import {
 
 import Detail from './detail';
 
-const _users = ['Lily', 'Lucy', 'Vica'];
+import { connect } from 'react-redux';
+import {
+	addUser,
+} from '../../actions/users';
+
+// const _users = ['Lily', 'Lucy', 'Vica'];
 
 class Users extends Component {
 	constructor(props) {
@@ -17,16 +22,24 @@ class Users extends Component {
 	  console.log('pathname /users was matched')
 	}
 
+	addUser() {
+		var name = prompt('enter a user name: ');
+
+		this.props._addUser(name)
+	}
+
 	render() {
 		return (
 			<div>
 				<ul>
 					{
-						_users.map(user => (
-							<li key={user}><Link to={`/users/${user}`}>{user}</Link></li>
+						this.props.users.map(user => (
+							<li key={user.id}><Link to={`/users/${user.name}`}>{user.name}</Link></li>
 						))
 					}
 				</ul>
+
+				<button style={{fontSize: '20px'}} onClick={this.addUser.bind(this)}> add user</button>
 
 				<hr />
 
@@ -36,4 +49,18 @@ class Users extends Component {
 	}
 }
 
-export default Users;
+function mapStateToProps(state) {
+	return {
+		users: state.users
+	}
+}
+
+function mapDispatchToProps(dispatch) {
+	return {
+		_addUser: function (name) {
+			dispatch(addUser({name}))
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Users);

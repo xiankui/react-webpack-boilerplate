@@ -6,6 +6,7 @@
 * 图片资源的处理
 * html的压缩
 * 单页应用的路由问题
+* 使用redux管理应用数据
 
 ## webpack要点
 * entry       -- webpack从入口文件解析出资源关系图，webpack只理解javascript，其他资源借助`loader`和`plugins`完成
@@ -44,5 +45,6 @@
 
 ## issues
 * react-router 迁移至 react-router-dom@^4.1.1，api变化较大，在路由中全面贯彻组合（Compose）思想
+* npm install --save-dev babel-plugin-transform-object-rest-spread  解析扩展运算符插件
 
 
