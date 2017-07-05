@@ -81,6 +81,13 @@ module.exports = {
     ]
 	},
 	plugins: [
+		// [fix issue](https://github.com/facebook/react/issues/6479)
+		new webpack.DefinePlugin({
+		  "process.env": { 
+		     NODE_ENV: JSON.stringify("production") 
+		   }
+		}),
+
 		new webpack.LoaderOptionsPlugin({
 		    minimize: true,
 		    debug: false
