@@ -1,10 +1,12 @@
-# React + Webpack模板之基础篇 -- 仿create-react-app
+# React + Webpack模板之多页面
+
+本模板解决类似传统站点的多页面需求，各个页面各自独立。
 
 ## 需要解决的问题
 * jsx的编译合并压缩
 * scss的编译合并压缩
 * 图片资源的处理
-* html的压缩
+* html各自引入各自的js和css
 
 ## webpack要点
 * entry       -- webpack从入口文件解析出资源关系图，webpack只理解javascript，其他资源借助`loader`和`plugins`完成
@@ -40,3 +42,7 @@
 ## webpack-dev-server 启动开发调试模式
 * npm start 
   - webpack-dev-server --config webpack.dev.js --progress --colors --inline --hot
+
+## 参考
+* [coffcer](https://github.com/Coffcer/Blog/issues/1)
+* [multipage](https://github.com/vhtml/webpack-MultiPage-static)
