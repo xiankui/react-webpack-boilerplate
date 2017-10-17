@@ -32,15 +32,13 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						babelrc: false,
-						presets: ['env', 'react'],
-						plugins: ['transform-object-rest-spread']
+						babelrc: true
 					}
 				}
 			},
 
 			{
-				test: /\.scss$/,
+				test: /\.less$/,
 				use: [
 					'style-loader', 
 					{
@@ -57,7 +55,7 @@ module.exports = {
 								require('autoprefixer')({
 	                browsers: [
 	                  '>1%',
-	                  'last 4 versions',
+	                  'last 6 versions',
 	                  'Firefox ESR',
 	                  'not ie < 9', // React doesn't support IE8 anyway
 	                ],
@@ -66,7 +64,7 @@ module.exports = {
 							]
 						}
 					},
-					'sass-loader'
+					'less-loader'
 				]
 			}, 
 			// "url" loader works like "file" loader except that it embeds assets

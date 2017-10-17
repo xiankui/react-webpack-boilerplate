@@ -2,7 +2,7 @@
 
 ## 需要解决的问题
 * jsx的编译合并压缩
-* scss的编译合并压缩
+* less的编译合并压缩
 * 图片资源的处理
 * html的压缩
 * 单页应用的路由问题
@@ -18,8 +18,8 @@
 * 处理ES6
   - babel-loader
 
-* 处理scss
-  - sass-loader
+* 处理less
+  - less-loader
   - post-cssloader.autoprefixer
   - css-loader
 

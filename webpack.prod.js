@@ -23,16 +23,14 @@ module.exports = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						babelrc: false,
-						presets: ['env', 'react'],
-						plugins: ['transform-object-rest-spread']
+						babelrc: true
 					}
 				}
 			},
 
-			// compile sass -> autoprefixer -> css
+			// compile less -> autoprefixer -> css
 			{
-				test: /\.scss$/,
+				test: /\.less$/,
 				use: ExtractTextPlugin.extract({
 					fallback: 'style-loader',
 					use: [
@@ -52,7 +50,7 @@ module.exports = {
 									require('autoprefixer')({
 		                browsers: [
 		                  '>1%',
-		                  'last 4 versions',
+		                  'last 6 versions',
 		                  'Firefox ESR',
 		                  'not ie < 9', // React doesn't support IE8 anyway
 		                ],
@@ -61,7 +59,7 @@ module.exports = {
 								]
 							}
 						},
-						'sass-loader'
+						'less-loader'
 					]
 				})
 			}, 

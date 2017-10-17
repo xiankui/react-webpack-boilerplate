@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './index.scss';
+import './index.less';
 
 const NotFound = () => (
 	<div className="error-page">

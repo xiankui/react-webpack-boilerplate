@@ -1,16 +1,14 @@
-$huge-fs: 44px;
-
-$prefix: app;
+@huge-fs: 44px;
 
 body {
 	margin: 0;
 }
 
-.#{$prefix}-container {
+.app-container {
 	text-align: center;
 	
 	h1 {
-		font-size: $huge-fs;
+		font-size: @huge-fs;
 		color: lightcoral;
 		display: flex;
 		justify-content: center;
@@ -22,7 +20,7 @@ body {
 	}
 }
 
-.#{$prefix}-banner {
+.app-banner {
 	height: 50px;
 	width: 100%;
 	background-image: url(bg.gif);
