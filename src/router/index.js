@@ -1,26 +1,33 @@
 import React from 'react';
-import { 
-	HashRouter as Router, // for static website
-	Route, 
+import {
+	BrowserRouter as Router, // for static website
+	Route,
 	Link,
 	Switch
 } from 'react-router-dom';
-
 
 import Home from '../components/Home';
 import About from '../components/About';
 import Users from '../components/Users';
 
-import NotFound from '../components/404/'
+import NotFound from '../components/404/';
 
 const App = () => (
 	<Router>
 		<div>
 			<ul>
-				<li><Link to="/">Home</Link></li>
-				<li><Link to="/about">About</Link></li>
-				<li><Link to="/users">Users</Link></li>
-				<li><Link to="/notfound">NotFound</Link></li>
+				<li>
+					<Link to="/">Home</Link>
+				</li>
+				<li>
+					<Link to="/about">About</Link>
+				</li>
+				<li>
+					<Link to="/users">Users</Link>
+				</li>
+				<li>
+					<Link to="/notfound">NotFound</Link>
+				</li>
 			</ul>
 			<div>
 				{/* Switch only render the first one that matches the current pathname. */}
@@ -37,6 +44,6 @@ const App = () => (
 			</div>
 		</div>
 	</Router>
-)
+);
 
 export default App;
