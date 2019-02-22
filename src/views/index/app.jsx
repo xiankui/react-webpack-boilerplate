@@ -15,6 +15,9 @@ class App extends Component {
 			<div className="app-container">
 				<h1>react with webpack</h1>
 				<img src={logo} alt="logo" />
+				<div>
+					<a href="/profile.html" style={{color: '#fff', fontSize: 20}}>Multipe Pages - Profile Page</a>
+				</div>
 			</div>
 		)
 	}	

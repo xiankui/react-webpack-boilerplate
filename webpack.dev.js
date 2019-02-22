@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // 规制目录入口
 const glob = require('glob');
@@ -65,8 +64,7 @@ const webpackConfig = {
 				use: {
 					loader: 'babel-loader',
 					options: {
-						babelrc: false,
-						presets: ['env', 'react']
+						babelrc: true,
 					}
 				}
 			},
@@ -117,12 +115,13 @@ const webpackConfig = {
 	    }
     ]
 	},
-	plugins: [    
+	optimization: {
 	  // 分离entry.vendors
-	  new webpack.optimize.CommonsChunkPlugin({
-	    name: 'vendors',
-	  })
-	],
+	  splitChunks: {
+	    name: 'vendors'
+	  }
+	},
+	plugins: [],
 
 	resolve: {
 	  extensions: ['.js', '.jsx', '.json']
