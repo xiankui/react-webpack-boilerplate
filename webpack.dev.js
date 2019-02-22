@@ -1,7 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 	devtool: 'cheap-module-eval-source-map',  // 配置生成Source Maps，选择合适的选项
@@ -83,15 +82,17 @@ module.exports = {
 	    }
     ]
 	},
+	optimization: {
+	  // 分离entry.vendors
+	  splitChunks: {
+	    name: 'vendors'
+	  }
+	},
 	plugins: [
 	  new HtmlWebpackPlugin({
 	  	template: path.resolve(__dirname, 'src/index.html'),
 	  	inject: 'body'  // 脚本注入到body，样式注入到head
 	  }),
-	  // 分离entry.vendors
-	  new webpack.optimize.CommonsChunkPlugin({
-	    name: 'vendors',
-	  })
 	],
 
 	resolve: {
